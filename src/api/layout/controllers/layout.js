@@ -6,7 +6,6 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-
 module.exports = createCoreController('api::layout.layout', ({ strapi }) => ({
     async find(ctx) {
         const entry = await strapi.entityService.findMany('api::layout.layout', {
@@ -16,7 +15,6 @@ module.exports = createCoreController('api::layout.layout', ({ strapi }) => ({
                         img: true
                     }
                 },
-
                 sidebar: {
                     populate: {
                         img: true, links: {
