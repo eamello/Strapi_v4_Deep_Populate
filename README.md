@@ -14,19 +14,20 @@ I will explain and provide you with an example of how you can deeply populate ne
            * links (Repeatable Component)
                 * title
                 * icon
-![image|690x334](upload://eq50xw7MGYfFsHErysDI8cDFSxb.png)
+
+![image](https://user-images.githubusercontent.com/93989197/147381118-6ce4df15-0818-4dec-85f3-5af583064ed2.png)
 
 Then I enabled the find controller for this content type from the setting:
 
-![image|690x236](upload://aTSJZxvp1rTZUBXAEQQ8L56BQSU.png)
+![image](https://user-images.githubusercontent.com/93989197/147381196-5e3a0c5f-dab6-4170-9e0e-fa5d98ad0228.png)
 
 Normally the API would return this data for this model: 
 
-![image|690x314](upload://wVKwcIowBlatfSDfTFU8gsNsbSL.png)
+![image](https://user-images.githubusercontent.com/93989197/147381139-19b02121-75ed-417f-a321-995ade204e36.png)
 
 But we can [overwrite/extend](https://docs.strapi.io/developer-docs/latest/development/backend-customization/controllers.html#extending-core-controllers) the core find controller (you can also create a [new route/controller](https://docs.strapi.io/developer-docs/latest/development/backend-customization/controllers.html#adding-a-new-controller)) instead. 
 
-![image|216x431](upload://aGNVjz9WgOLOyb9HQIeIeF4WpuS.png)
+![image](https://user-images.githubusercontent.com/93989197/147381156-c839e4f8-4804-4d9b-b361-7f704103ede4.png)
 
 In order to do this, modify the code in the following file:
 ```
@@ -70,7 +71,7 @@ module.exports = createCoreController('api::layout.layout', ({ strapi }) => ({
 > Pay attention to the **api::layout.layout** which is the UID for your specific content type and field.
 
 Now that looks like the data we are looking for:
-![image|690x396](upload://9ZvO4X421B3WzrXyoskjg3arCfD.png)
 
-Now of course, you should review the core controllers and make sure you are handling sanitization and parameter passing etc... but this should get you started!
+![image](https://user-images.githubusercontent.com/93989197/147381449-76b88af6-588a-4aa1-b18f-2bf7b22764a9.png)
 
+Now of course, you should review the core controllers and your business logic to make sure you are handling permissions and parameter passing correctly and necessarily... but this should get you started!
