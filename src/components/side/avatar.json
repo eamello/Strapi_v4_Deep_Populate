@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_side_avatars",
+  "info": {
+    "displayName": "avatar",
+    "icon": "angry"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
